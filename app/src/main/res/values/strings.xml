@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ScreenRec</string>
+    <string name="pane_settings">Setting</string>
+    <string name="pane_record_screen">RecScreen</string>
+    <string name="pane_screen_shot">ScreenShots</string>
+    <string name="screen_recording_notification_content">Touch to control</string>
+    <string name="record_screen_with_audio">Record with sound</string>
+    <string name="screen_shot_notify_title">Screen is screenshot</string>
+    <string name="screen_shot_notify_content">Touch to view screenshot</string>
+    <string name="screen_record_notify_title">Screen is recorded</string>
+    <string name="screen_record_notify_content">Touch to view video</string>
+    <string name="screen_recording_recording_toast">Screen is recording</string>
+
+    <string name="screen_recording_started_toast">Screen recording started</string>
+    <string name="screen_recording_stopped_toast">Screen Recording stopped</string>
+    <string name="screen_recording_resumed_toast">Screen Recording resumed</string>
+    <string name="screen_recording_paused_toast">Screen Recording paused</string>
+    <string name="fab_stop_hint">Stop recording</string>
+    <string name="recording_failed_toast">Screen recording failed.</string>
+    <string name="screenrecording_already_active_toast">Screen recording session already active</string>
+    <string name="screen_recording_permission_denied">Screen Recording Permission Denied</string>
+    <string name="screen_recording_notification_title">Recording screen</string>
+    <string name="screen_recording_notification_text">Screen recorder is Running</string>
+    <string name="screen_recording_notification_action_stop">Stop</string>
+    <string name="screen_recording_notification_action_pause">Pause</string>
+    <string name="screen_recording_notification_action_resume">Resume</string>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.screen.recorder.example">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_laucher"
+        android:roundIcon="@drawable/ic_laucher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="org.screen.recorder.example.ScreenRecorderAcitvity"
+            android:excludeFromRecents="true"
+            ><!--android:theme="@style/Theme.Transparent"-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="org.screen.recorder.example.broadcast.BroadcastReceiverBoot"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <service
+            android:name="org.screen.recorder.example.bootstarttime.RecorderScreenExampleService"
+            android:enabled="true"/>
+
+
+        <activity
+            android:name="org.screen.recorder.example.screenshot.ScreenShotActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name="org.screen.recorder.example.recordscreen.RecordScreenActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.Transparent" />
+
+        <service
+            android:name="org.screen.recorder.example.recordscreen.RecorderService"
+            android:exported="false" />
+
+
+    </application>
+
+</manifest>
